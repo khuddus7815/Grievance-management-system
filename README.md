@@ -54,4 +54,5 @@ A web application for students and teachers to manage grievances, with user-frie
 
 ## Requirement/Installation to run locally on your PC💻
 
-Download <a href=https://www.apachefriends.org/>XAMPP</a> for local server.
+Download and install on your pc <a href=https://www.apachefriends.org/>XAMPP</a> for local server.
+Start your local server using xampp by follow this 👉 <a href=https://youtu.be/VCHXCusltqI?feature=shared>tutorial</a>
