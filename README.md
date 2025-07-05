@@ -41,3 +41,17 @@ A web application for students and teachers to manage grievances, with user-frie
   <img src="./images/screenshots/screenshot1.png" width="70%" style="margin: 1%" />
   <img src="./images/screenshots/screenshot2.png" width="70%" style="margin: 1%" />
 </p>
+
+## Features
+
+- User-friendly interface
+- Easy login and sign-up process
+- Register and manage grievance
+- Check status
+- Keeping records seperatly
+- Fetch grievances by just student id or grievance id
+- Easy to maintain
+
+## Requirement/Installation to run locally on your PC💻
+
+Download <a href=https://www.apachefriends.org/>XAMPP</a> for local server.
