@@ -33,16 +33,16 @@
   </a>
 </p>
 
-A web application for students and teachers to manage grievances, with user-friendly interface managing complains become much more easier for student. Also for teachers, keeping records are now hassle-free.
+A web application for students and teachers to manage grievances, with user-friendly interface managing complains become much more easier for student. Also for teachers, keeping records are now hassle-free.🌐
 
-## Screenshots
+## Screenshots🖼️
 
 <p align="center">
   <img src="./images/screenshots/screenshot1.png" width="70%" style="margin: 1%" />
   <img src="./images/screenshots/screenshot2.png" width="70%" style="margin: 1%" />
 </p>
 
-## Features
+## Features🛠️
 
 - User-friendly interface
 - Easy login and sign-up process
@@ -54,5 +54,11 @@ A web application for students and teachers to manage grievances, with user-frie
 
 ## Requirement/Installation to run locally on your PC💻
 
-Download and install on your pc <a href=https://www.apachefriends.org/>XAMPP</a> for local server.
-Start your local server using xampp by follow this <a href=[](https://www.youtube.com/watch?v=VCHXCusltqI)>Tutorial</a>
+Download and install on your pc 🔧[XAMPP](https://www.apachefriends.org/) for local server.
+Start your local server using xampp by follow this 👉[Tutorial](https://youtu.be/VCHXCusltqI?feature=shared)
+Download the Sql file, create a database as per the name given in info file and import the sql file into it. Follow this 👉[Tutorial](https://youtu.be/c0qk4aP39Rk?feature=shared)
+
+## Authors
+
+- [linkedin](www.linkedin.com/in/pratik-bairagi)
+- [Website](https://my-portfolio-rouge-iota-67.vercel.app/)
