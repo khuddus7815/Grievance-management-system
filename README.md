@@ -38,6 +38,6 @@ A web application for students and teachers to manage grievances, with user-frie
 ## Screenshots
 
 <p align="center">
-  <img src="./images/screenshots/screenshot1.png" width="22%" style="margin: 1%" />
-  <img src="./images/assets/screenshots/screenshot2.png" width="22%" style="margin: 1%" />
+  <img src="./images/screenshots/screenshot1.png" width="40%" style="margin: 1%" />
+  <img src="./images/screenshots/screenshot2.png" width="40%" style="margin: 1%" />
 </p>
