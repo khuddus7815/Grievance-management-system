@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./images/screenshots/gms.png" width="100%">
+</p>
+
 <h1 align="center" style="font-family: Arial, sans-serif; color: #FF6F61; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
   Grievance-management-system
 </h1>
@@ -31,6 +35,7 @@
     <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white"
       alt="mysql" />
   </a>
+  
 </p>
 
 A web application for students and teachers to manage grievances, with user-friendly interface managing complains become much more easier for student. Also for teachers, keeping records are now hassle-free.🌐
