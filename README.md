@@ -38,7 +38,7 @@
   
 </p>
 
-Student‑teacher grievance management system using PHP/MySQL
+A web application for students and teachers to manage grievances, with user-friendly interface managing complains become much more easier for student. Also for teachers, keeping records are now hassle-free.
 
 ## Screenshots🖼️
 
