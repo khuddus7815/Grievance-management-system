@@ -134,7 +134,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                                     if($cfile=="" || $cfile=="NULL") {
                                         echo "File NA";
                                     } else { ?>
-                                        <a href="../user/complaintdocs/<?php echo htmlentities($row['complaintFile']);?>" target="_blank"> View File</a>
+                                       <a href="complaintdocs/<?php echo htmlentities($row['complaintFile']);?>" target="_blank"> View File</a>
                                     <?php } ?>
                                 </span>
                             </div>

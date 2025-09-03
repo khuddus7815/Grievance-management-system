@@ -137,7 +137,7 @@ if($cfile=="" || $cfile=="NULL")
   echo "File NA";
 }
 else{?>
-<a href="../users/complaintdocs/<?php echo htmlentities($row['complaintFile']);?>" target="_blank"/> View File</a>
+<a href="../user/complaintdocs/<?php echo htmlentities($row['complaintFile']);?>" target="_blank"/> View File</a>
 <?php } ?></td>
 </tr>
 
