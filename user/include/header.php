@@ -1,46 +1,82 @@
-<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
-		
-			
-				<div class="m-header">
-					<a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
-					<a href="dashboard.php" class="b-brand">
-						<strong>Grievance Management</strong>
-					</a>
-					<a href="#!" class="mob-toggler">
-						<i class="feather icon-more-vertical"></i>
-					</a>
-				</div>
-				<div class="collapse navbar-collapse">
-				 
-					<ul class="navbar-nav ml-auto">
-						<li>
-							<div class="dropdown">
-								<a class="dropdown-toggle" href="#" data-toggle="dropdown">
-									<i class="feather icon-user"></i>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right profile-notification">
-									<div class="pro-head">
-										<img src="../admin/assets/images/user/user.png" class="img-radius" alt="User-Profile-Image">
-										<?php
-
-$ret=mysqli_query($con,"select fullname from users");
-$row=mysqli_fetch_array($ret);
-$name=$row['fullname'];
-
+<?php
+$uid = $_SESSION['id'];
+$query = mysqli_query($con, "SELECT fullName, userImage FROM users WHERE id='$uid'");
+$row = mysqli_fetch_array($query);
 ?>
-										<span> <?php echo $name; ?></span>
-										<a href="logout.php" class="dud-logout" title="Logout">
-											<i class="feather icon-log-out"></i>
-										</a>
-									</div>
-									<ul class="pro-body">
-										<li><a href="profile.php" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
-										<li><a href="setting.php" class="dropdown-item"><i class="feather icon-mail"></i> Settings</a></li>
-										<li><a href="logout.php" class="dropdown-item"><i class="feather icon-lock"></i> Logout</a></li>
-									</ul>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>	
-	</header> 
+<head>
+    <style>
+        /* Navbar base layout */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            background: #222;
+            position: relative;
+        }
+
+        /* Title always centered */
+        .b-brand h1 {
+            margin: 0;
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* Left & right buttons */
+        .mobile-menu,
+        .navbar-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .mobile-menu {
+            left: 15px;
+        }
+
+        .navbar-nav {
+            right: 15px;
+            margin: 0;
+        }
+
+        .mobile-menu span,
+        .feather.icon-user {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: grey; /* Profile icon in grey */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .b-brand h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .b-brand h1 {
+                font-size: 1.3rem;
+            }
+            .pcoded-header .navbar-nav > li {
+                padding: 0 5px;
+            }
+        }
+    </style>
+</head>
+<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
+    <!-- Left side menu toggle -->
+    <a class="mobile-menu" id="mobile-collapse" href="#!">
+        <span></span>
+    </a>
+
+    <!-- Center title -->
+    <a href="dashboard.php" class="b-brand">
+        <h1>Tranetra</h1>
+    </a>
+
+    
+</header>

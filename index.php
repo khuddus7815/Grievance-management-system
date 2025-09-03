@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Student Grievance System</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <title>TRANETRA - Civic Reporting Platform</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
-    <link href="css/landing_style.css" rel="stylesheet" />
     <link href="css/responsive.css" rel="stylesheet" />
+
+    <style>
+        .slider_section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* On small screens: center illustration and move it above the text */
+        @media (max-width: 767.98px) {
+            .slider_section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .illustration-image {
+                order: -1; /* Moves illustration to the top */
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <body>
-        <div class="hero_area">
-          <header class="header_section">    
+    <div class="hero_area">
+        <!-- Glassy Navbar -->
+        <header class="header_section glass-navbar">
             <div class="container">
-              <nav class="navbar navbar-expand-lg custom_nav-container ">
-                <a class="navbar-brand" href="index.php">
-                  <img src="images/stu_home.png" alt="">
-                  <span>
-                    Student Grievance System
-                  </span>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="s-1"> </span>
-                  <span class="s-2"> </span>
-                  <span class="s-3"> </span>
-                </button>
-      
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-                    <ul class="navbar-nav  ">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="user/index.php"> Student Login</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="admin/index.php"> Admin </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </header>
-          <section class=" slider_section ">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 ">
-                  <div class="detail_box">
-                    <h1>
-                      Welcome, <br>
-                      Students. <br>
-                    </h1>
-                    <p>
-                        This is a place where you can freely express your complaints and concerns. 
-                        We are here to listen and help you resolve any issues you may be facing. 
-                        Your voice matters, and we are committed to ensuring a supportive and responsive environment for all students.
-                    </p>
-                    <a href="user/index.php" class="">
-                      login
-                  </div>
-                </div>
-                <div class="col-lg-5 col-md-6 offset-lg-1">
-                    <div class="img_content">
-                        <div class="img_container">
-                            <div class="img-box">
-                                <img src="images/graduation.png" alt="" class="img_girl">
-                            </div>
-                        </div>
-                            <a class="" href="" role="" data-slide=""></a>
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="index.php">
+                        <span>TRANETRA</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+                        More
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.php">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="user/index.php">Citizen Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin/index.php">Official Login</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-              </div>
+                </nav>
             </div>
-          </section>
-        </div>
+        </header>
+
+        <section class="slider_section">
+            <div class="slider_content">
+                <h1 class="main-title">Report Civic Issues,<br> Drive Change.</h1>
+                <p class="main-subtitle">
+                    Welcome to TRANETRA. Your platform to report traffic violations, public nuisances,
+                    safety concerns, and electricity issues. Your voice matters in making our community safer and more efficient.
+                </p>
+                <a href="user/report.php" class="main-btn">File a Report</a>
+            </div>
+
+            <div class="illustration-image">
+                <img src="images/illustration.png" alt="Illustration" class="img-fluid">
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

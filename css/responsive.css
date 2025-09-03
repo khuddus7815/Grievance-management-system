@@ -1,419 +1,158 @@
-/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
-
-
-/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .header-search {
-        padding: 15px 0px;
-    }
+/* ===== Background Color ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #D2B48C; /* Light brown */
+    z-index: -1;
 }
 
+/* ===== Adjusted Glass Containers for Light Background ===== */
+.glass-navbar,
+.header_section,
+.container,
+.glass-container {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(101, 67, 33, 0.3); /* Subtle dark brown border */
+    border-radius: 10px;
+}
 
-/*------------------------------------------------------------------- 767px x 599px ---------------------------------------------------------------------*/
+.header_section {
+    padding: 15px 20px;
+}
 
-@media only screen and (min-width: 599px) and (max-width: 767px) {
-    .logo {
+/* ===== Navbar Brand & Links (Updated for Readability) ===== */
+.navbar-brand span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #5C4033; /* Dark brown for contrast */
+}
+
+.nav-link {
+    color: #5C4033 !important;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: #000 !important;
+}
+
+/* ===== Hero Section (With Illustration) ===== */
+.slider_section {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+.slider_content {
+    flex: 1;
+}
+
+.illustration-image {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+}
+
+.illustration-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== Main Title & Subtitle ===== */
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #5C4033;
+    margin-bottom: 20px;
+}
+
+.main-subtitle {
+    font-size: 1.2rem;
+    color: #6A5A4D;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* ===== Buttons ===== */
+.main-btn {
+    display: inline-block;
+    background: #8B4513;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+.main-btn:hover {
+    background: #5C4033;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ===== Mobile Dropdown ===== */
+.navbar-toggler {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(101, 67, 33, 0.3);
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbar-toggler span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #5C4033;
+    border-radius: 2px;
+}
+
+.navbar-collapse {
+    background: #F5F5DC;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(101, 67, 33, 0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .slider_section {
+        flex-direction: column-reverse;
         text-align: center;
+        padding: 20px;
+        height: auto;
+        min-height: 75vh;
     }
-    .cart-content-right {
-        padding-bottom: 5px;
+
+    .slider_content {
+        max-width: 100%;
     }
-    .mg {
-        margin: 0px 0px;
-    }
-    .menu-area-main {
-        height: 256px;
-        overflow-y: auto;
-    }
-    .megamenu>.row [class*="col-"] {
-        padding: 0px;
-    }
-    .menu-area-main .megamenu .men-cat {
-        padding: 0px 15px;
-    }
-    .menu-area-main .megamenu .women-cat {
-        padding: 0px 15px;
-    }
-    .menu-area-main .megamenu .el-cat {
-        padding: 0px 15px;
-    }
-    .mean-container .mean-nav ul li a.mean-expand {
-        height: 19px;
-    }
-    .category-box.women-box {
-        display: none;
-    }
-    .cart-box {
-        display: inline-block;
-        margin: 0px 30px;
-    }
-    .wish-box {
-        float: none;
-        margin: 0px 30px;
-        display: inline-block;
-    }
-    .menu-add {
-        display: none;
-    }
-    .category-box {
-        display: none;
-    }
-    .mean-container .mean-nav ul li ol {
-        padding: 0px;
-    }
-    .mean-container .mean-nav ul li a {
-        padding: 10px 20px;
-        width: 94.8%;
-    }
-    .mean-container .mean-nav ul li li a {
-        width: 92%;
-        padding: 1em 4%;
-    }
-    .mean-container .mean-nav ul li li li a {
-        width: 100%;
-    }
-    .header-search {
-        padding: 15px 0px;
-    }
-    #collapseFilter.d-md-block {
-        padding: 30px 0px;
+
+    .illustration-image {
+        max-width: 300px;
+        margin-bottom: 20px;
     }
 }
 
-
-/*------------------------------------------------------------------- 599px x 280px ---------------------------------------------------------------------*/
-
-@media only screen and (min-width: 280px) and (max-width: 599px) {
-    .cart-content-right {
-        padding-bottom: 5px;
-    }
-    .megamenu>.row [class*="col-"] {
-        padding: 0px;
-    }
-    .menu-area-main .megamenu .men-cat {
-        padding: 0px 15px;
-    }
-    .menu-area-main .megamenu .women-cat {
-        padding: 0px 15px;
-    }
-    .menu-area-main .megamenu .el-cat {
-        padding: 0px 15px;
-    }
-    .mean-container .mean-nav ul li a {
-        padding: 1em 4%;
-        width: 92%;
-    }
-    .mean-container .mean-nav ul li li a {
-        width: 90%;
-        padding: 1em 5%;
-    }
-    .mean-container .sub-full.megamenu-categories ol li a {
-        padding: 5px 0px;
-        text-transform: capitalize;
-        width: 100%;
-    }
-    .megamenu .sub-full.megamenu-categories .women-box .banner-up-text a {
-        width: auto;
-        border: none;
-        float: none;
-    }
-    .menu-area-main {
-        height: 45px;
-        overflow-y: auto;
-    }
-    .mean-container .mean-nav ul li a.mean-expand {
-        top: 0;
-    }
+@media (max-width: 768px) {
+    .main-title { font-size: 2.2rem; }
+    .main-subtitle { font-size: 1rem; }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-.header_social_icon li {
-    padding: 1px;
-}
-.navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 6px;
-    padding-left: 5px;
-    font-size: 16px;
-}
-.about_taital_main {
-    padding-top: 150px;
-}
-.about_section{
-    padding-top: 0px;
-}
-.image_bg {
-    padding: 166px 0px;
-}
-.improve_section_2{
-    background-size: cover;
-}
-
-
-
-
-
-
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    #main_slider a.carousel-control-prev {
-        position: absolute;
-        left: 175px;
-        top: 90%;
-        display: none;
-    }
-    #main_slider a.carousel-control-next {
-        position: absolute;
-        left: 236px;
-        top: 90%;
-        display: none;
-    }
-.logo {
-    width: 100%;
-}
-.bg-light {
-    background-color: transparent !important;
-    float: right;
-}
-.banner_section {
-    padding-bottom: 90px;
-}
-.navbar-toggler {
-    background-color: #fff;
-}
-.header_social_icon{
-    display: none;
-}
-.header_section {
-    background-size: cover;
-}
-.about_taital_main {
-    padding-top: 70px;
-}
-.about_taital {
-    font-size: 28px;
-}
-.about_box_2 {
-    left: -110px;
-}
-.image_bg {
-    padding: 104px 0px;
-}
-.improve_section_2{
-    background-size: cover;
-}
-.gallery_section{
-    margin-top: 0px;
-}
-.client_text {
-    width: 90%;
-}
-.useful_text {
-    padding-top: 30px;
-}
-
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-    #main_slider a.carousel-control-prev {
-        position: absolute;
-        left: 175px;
-        top: 90%;
-        display: none;
-    }
-    #main_slider a.carousel-control-next {
-        position: absolute;
-        left: 236px;
-        top: 90%;
-        display: none;
-    }
-.logo {
-    width: 100%;
-}
-.bg-light {
-    background-color: transparent !important;
-    float: right;
-}
-.navbar-toggler {
-    background-color: #fff;
-}
-.header_social_icon{
-    display: none;
-}
-.header_section {
-    background-size: cover;
-}
-.banner_taital{
-    font-size: 50px;
-}
-.banner_section {
-    padding-bottom: 60px;
-    padding-top: 60px;
-}
-.about_taital_main {
-    padding-top: 0;
-}
-.about_taital {
-    font-size: 30px;
-}
-.making_text {
-   font-size: 20px;
-}
-.about_box_2{
-    left: 0px;
-}
-.improve_taital {
-    font-size: 40px;
-}
-.improve_text {
-    width: 100%;
-}
-.image_bg {
-    padding: 140px 0px;
-    background-size: cover;
-}
-.play_icon {
-    width: 60px;
-}
-.play_icon::before {
-    top: 30px;
-    left: 30px;
-    width: 70px;
-    height: 70px;
-}
-.improve_section_2 {
-    margin-top: 90px;
-    padding: 40px 0px;
-    margin-bottom: 0;
-    background-size: cover;
-}
-.gallery_taital{
-    margin-top: 0px;
-    font-size: 30px;
-}
-.client_main{
-    display: inline-block;
-}
-.client_taital{
-    font-size: 30px;
-}
-.client_text {
-    width: 100%;
-}
-.client_text_main {
-    width: 100%;
-}
-.contact_section{
-    padding-top: 0px;
-    padding-bottom: 90px;
-}
-.mail_section_1 {
-    width: 100%;
-}
-    .useful_text {
-        padding-top: 30px;
-    }
-}
-
-@media (max-width: 575px) {
-    #main_slider a.carousel-control-prev {
-        position: absolute;
-        left: 175px;
-        top: 90%;
-        display: none;
-    }
-    #main_slider a.carousel-control-next {
-        position: absolute;
-        left: 236px;
-        top: 90%;
-        display: none;
-    }
-.logo {
-    width: 100%;
-}
-.bg-light {
-    background-color: transparent !important;
-    float: right;
-    padding-right: 0px;
-}
-.navbar-toggler {
-    background-color: #fff;
-}
-.header_social_icon{
-    display: none;
-}
-.header_section {
-    background-size: cover;
-}
-.banner_taital{
-    font-size: 30px;
-}
-.banner_section {
-    padding-bottom: 60px;
-    padding-top: 60px;
-}
-.about_taital_main {
-    padding-top: 0;
-}
-.about_taital {
-    font-size: 26px;
-}
-.making_text {
-   font-size: 18px;
-}
-.about_box_2{
-    left: 0px;
-}
-.improve_taital {
-    font-size: 30px;
-}
-.improve_text {
-    width: 100%;
-    font-size: 15px;
-}
-.image_bg {
-    padding: 40px 0px;
-    background-size: cover;
-}
-.play_icon {
-    width: 60px;
-}
-.play_icon::before {
-    top: 30px;
-    left: 30px;
-    width: 70px;
-    height: 70px;
-}
-.improve_section_2 {
-    margin-top: 90px;
-    padding: 40px 0px;
-    margin-bottom: 0;
-    background-size: cover;
-}
-.gallery_taital{
-    margin-top: 0px;
-    font-size: 30px;
-}
-.client_main{
-    display: inline-block;
-}
-.client_taital{
-    font-size: 30px;
-}
-.client_text {
-    width: 100%;
-}
-.client_text_main {
-    width: 100%;
-}
-.contact_section{
-    padding-bottom: 90px;
-}
-.mail_section_1 {
-    width: 100%;
-}
-    .useful_text {
-        padding-top: 30px;
-    }
+@media (max-width: 480px) {
+    .main-title { font-size: 1.8rem; }
+    .main-subtitle { font-size: 0.9rem; }
 }

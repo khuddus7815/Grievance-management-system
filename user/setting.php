@@ -1,4 +1,3 @@
-
 <?php session_start();
 include_once('include/config.php');
 if(strlen($_SESSION["id"])==0)
@@ -9,8 +8,11 @@ header('location:logout.php');
 if(isset($_POST['update']))
 {
 $uid=$_SESSION["id"];
-$currentpassword=($_POST['cpass']);
-$newpassword=($_POST['newpass']);
+// Hash the input current password to compare with the one in the database
+$currentpassword=md5($_POST['cpass']); 
+// Hash the new password before storing it
+$newpassword=md5($_POST['newpass']);
+
 $ret=mysqli_query($con,"SELECT id FROM users WHERE id='$uid' and password='$currentpassword'");
 $num=mysqli_num_rows($ret);
 if($num>0)
@@ -21,7 +23,6 @@ echo "<script>alert('Password changed successfully.');</script>";
 echo "<script type='text/javascript'> document.location ='setting.php'; </script>";
 }else{
 echo "<script>alert('Current Password is wrong.');</script>";
-echo "<script type='text/javascript'> document.location ='setting.php'; </script>";
 }
 }
 ?>
@@ -30,9 +31,7 @@ echo "<script type='text/javascript'> document.location ='setting.php'; </script
 
 <head>
     <title>Change Password</title>
-   
-
-    <!-- vendor css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../admin/assets/css/style.css">
     
     <script type="text/javascript">
@@ -40,7 +39,7 @@ function valid()
 {
 if(document.chngpwd.newpass.value!= document.chngpwd.cnfpass.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("New Password and Confirm Password fields do not match!");
 document.chngpwd.cnfpass.focus();
 return false;
 }
@@ -50,15 +49,11 @@ return true;
 
 </head>
 <body class="">
-	<?php include('include/sidebar.php');?>
-	<!-- [ navigation menu ] end -->
-	<!-- [ Header ] start -->
-	<?php include('include/header.php');?>
+    <?php include('include/sidebar.php');?>
+    <?php include('include/header.php');?>
 
-<!-- [ Main Content ] start -->
 <section class="pcoded-main-container">
     <div class="pcoded-content">
-        <!-- [ breadcrumb ] start -->
         <div class="page-header">
             <div class="page-block">
                 <div class="row align-items-center">
@@ -69,71 +64,45 @@ return true;
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="dashboard.php"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="setting.php">Change Password</a></li>
-                            
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- [ breadcrumb ] end -->
-        <!-- [ Main Content ] start -->
         <div class="row">
-          
-            <!-- [ form-element ] start -->
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <h5>Change Password</h5>
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                            	
-                                <form method="post" name="chngpwd" onSubmit="return valid();">
-                                	
+                        <div class="row justify-content-center"> <div class="col-md-8 col-lg-6"> <form method="post" name="chngpwd" onSubmit="return valid();">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Current Password</label>
+                                        <label for="cpass">Current Password</label>
                                         <input type="password" class="form-control" id="cpass" name="cpass" required="required">
-                                        
                                     </div>
-                                      <div class="form-group">
-                                        <label for="exampleInputEmail1">New Password</label>
+                                    <div class="form-group">
+                                        <label for="newpass">New Password</label>
                                         <input type="password" class="form-control" id="newpass" name="newpass" required>
-                                        
                                     </div>
-                                       <div class="form-group">
-                                        <label for="exampleInputEmail1">Confirm Password</label>
+                                    <div class="form-group">
+                                        <label for="cnfpass">Confirm Password</label>
                                         <input type="password" class="form-control" id="cnfpass" name="cnfpass" required="required">
-                                        
                                     </div>
-                                   
-                                
-                                    <button type="submit" class="btn  btn-primary" name="update" id="update">Submit</button>
+                                    <button type="submit" class="btn btn-primary" name="update" id="update">Update</button>
                                 </form>
                             </div>
-                           
                         </div>
-                     
-                   
                     </div>
                 </div>
-          
             </div>
-            <!-- [ form-element ] end -->
+            </div>
         </div>
-        <!-- [ Main Content ] end -->
-
-    </div>
 </section>
 
-
-    <!-- Required Js -->
     <script src="../admin/assets/js/vendor-all.min.js"></script>
     <script src="../admin/assets/js/plugins/bootstrap.min.js"></script>
     <script src="../admin/assets/js/pcoded.min.js"></script>
-
-
-
 
 </body>
 

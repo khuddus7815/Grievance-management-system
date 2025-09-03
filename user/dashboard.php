@@ -3,21 +3,61 @@ session_start();
 error_reporting(0);
 include('include/config.php');
 if(strlen($_SESSION['id'])==0)
-	{	
+    {   
 header('location:index.php');
 }
 else{
-	?>
+    ?>
 <!DOCTYPE html>
 <html lang="en"> 
- 
+
 <head>
     <title>Grievance Management System || Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Grievance Management System" />
+    <meta name="keywords" content="Grievance Management System" />
+    <meta name="author" content="codedthemes" />
+    <link rel="icon" href="../admin/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="../admin/assets/css/style.css">
+
+    <style>
+        /* Simple inline styles for responsiveness */
+        .card.flat-card {
+            margin-bottom: 20px;
+        }
+        
+        /* Styles FOR MOBILE DEVICES to align content correctly */
+        @media (max-width: 575px) {
+            .flat-card .row-table {
+                display: flex;          /* Use flexbox for better alignment */
+                align-items: center;    /* Vertically center the icon and text */
+                padding: 1rem;          /* Add some padding inside the card */
+            }
+
+            .flat-card .row-table .card-body {
+                flex: 0 0 60px;         /* Give the icon a fixed width */
+                padding: 0;             /* Remove extra padding from the icon's container */
+                text-align: center;
+            }
+
+            .flat-card .row-table .col-sm-9 {
+                flex: 1;                /* Allow the text to take the remaining space */
+                text-align: left;       /* Align the text to the left */
+                padding-left: 15px;     /* Add space between icon and text */
+            }
+
+            .page-header-title h5 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body class="">
 <?php include('include/sidebar.php');?>
-	<?php include('include/header.php');?>
+    <?php include('include/header.php');?>
 <div class="pcoded-main-container">
     <div class="pcoded-content">
         <div class="page-header">
@@ -35,11 +75,11 @@ else{
                 </div>
             </div>
         </div>
-        <div class="row">     
-              <div class="col-md-12 col-xl-6">              
+        <div class="row">       
+              <div class="col-md-6 col-xl-6">               
                 <div class="card flat-card widget-primary-card">
                     <div class="row-table">
-                        <div class="col-sm-4 card-body">
+                        <div class=" card-body">
                             <i class="fas fa-file"></i>
                         </div>
                         <div class="col-sm-9">
@@ -54,10 +94,10 @@ $totcom=mysqli_num_rows($query5);
                     </div>
                 </div>
             </div>
-              <div class="col-md-12 col-xl-6">       
+              <div class="col-md-6 col-xl-6">    
                 <div class="card flat-card bg-danger">
                     <div class="row-table">
-                        <div class="col-sm-4 card-body">
+                        <div class="col-sm-3 card-body">
                             <i class="fas fa-file"></i>
                         </div>
                         <div class="col-sm-9">
@@ -71,7 +111,7 @@ $newcom=mysqli_num_rows($query5);
                     </div>
                 </div>
             </div>
-              <div class="col-md-12 col-xl-6">                
+              <div class="col-md-6 col-xl-6">               
                 <div class="card flat-card bg-warning">
                     <div class="row-table">
                         <div class="col-sm-3 card-body">
@@ -88,10 +128,10 @@ $inprocesscom=mysqli_num_rows($query5);
                     </div>
                 </div>
             </div>
-              <div class="col-md-12 col-xl-6">
+              <div class="col-md-6 col-xl-6">
                 <div class="card flat-card widget-purple-card">
                     <div class="row-table">
-                        <div class="col-sm-3 card-body">
+                        <div class=" card-body">
                             <i class="fas fa-file"></i>
                         </div>
                         <div class="col-sm-9">

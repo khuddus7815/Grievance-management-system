@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include('include/config.php');
@@ -17,6 +16,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
 
 <head>
     <title>Grievance History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../admin/assets/css/style.css">
     
 <script language="javascript" type="text/javascript">
@@ -29,10 +29,23 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
     }
 </script>   
 
+<style>
+    /* This makes the table scroll horizontally on small screens */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+    }
+    /* This prevents the text in table cells from wrapping to a new line */
+    .table-responsive table td, 
+    .table-responsive table th {
+        white-space: nowrap;
+    }
+</style>
+
 </head>
 <body class="">
-	<?php include('include/sidebar.php');?>
-	<?php include('include/header.php');?>
+    <?php include('include/sidebar.php');?>
+    <?php include('include/header.php');?>
 <section class="pcoded-main-container">
     <div class="pcoded-content">
         <div class="page-header">
@@ -44,8 +57,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="dashboard.php"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="complaint-history.php">Grievance History</a></li>
-                            
+                            <li class="breadcrumb-item"><a href="grievance-history.php">Grievance History</a></li>
                         </ul>
                     </div>
                 </div>
@@ -54,65 +66,62 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
-                 
                     <div class="card-body">
                         <h5>View Grievance History</h5>
                         <hr>
-                       
-                      <div class="row">
-                            <div class="col-xl-12">
-                <div class="card">
-                   
-                    <div class="card-body table-border-style">
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
-                                        <tr><th>#</th>
-											<th>Grievance No</th>
-											<th>Complainant Name</th>
-											<th>Reg Date</th>
-											<th>Status</th>
-											<th>Action</th>
-										</tr>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Grievance No</th>
+                                        <th>Complainant Name</th>
+                                        <th>Reg Date</th>
+                                        <th>Status</th>
+                                        <th>Location</th> <th>Action</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                    <?php 
+                                <?php 
 $uid=$_SESSION['id'];
 $query=mysqli_query($con,"select tblcomplaints.*,users.fullName as name from tblcomplaints join users on users.id=tblcomplaints.userId where tblcomplaints.userId='$uid'");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {
 ?>  
-                                        <tr>
-                                            <td><?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo htmlentities($row['complaintNumber']);?></td>
-                                            <td><?php echo htmlentities($row['name']);?></td>
-                                            <td> <?php echo htmlentities($row['regDate']);?></td>
-                                             <td>
-                                                <?php $status=$row['status'];
+                                    <tr>
+                                        <td><?php echo htmlentities($cnt);?></td>
+                                        <td><?php echo htmlentities($row['complaintNumber']);?></td>
+                                        <td><?php echo htmlentities($row['name']);?></td>
+                                        <td><?php echo htmlentities($row['regDate']);?></td>
+                                        <td>
+                                            <?php $status=$row['status'];
                                                 if($status==''): ?>
                                                 <span class="badge badge-danger">Not Processed Yet</span>
                                             <?php elseif($status=='in process'):?>
                                              <span class="badge badge-warning">In Process</span>
-                                         <?php elseif($status=='closed'):?>
+                                          <?php elseif($status=='closed'):?>
                                              <span class="badge badge-success">Closed</span>
-                                         <?php endif;?>
-</td>
-<td>   <a href="complaint-details.php?cid=<?php echo htmlentities($row['complaintNumber']);?>" class="btn btn-primary btn-sm"> View Details</a> 
-											</td>
-
+                                          <?php endif;?>
                                         </td>
-                                            
 
-                                        </tr>
-                                        <?php $cnt=$cnt+1; } ?>
-                                   
+                                        <td>
+                                            <?php 
+                                            $lat = htmlentities($row['latitude']);
+                                            $long = htmlentities($row['longitude']);
+                                            if(!empty($lat) && !empty($long)) {
+                                                // Create a link to Google Maps
+                                                echo "<a href='https://www.google.com/maps?q={$lat},{$long}' target='_blank' class='btn btn-info btn-sm'>View on Map</a>";
+                                            } else {
+                                                echo "Not Provided";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td><a href="complaint-details.php?cid=<?php echo htmlentities($row['complaintNumber']);?>" class="btn btn-primary btn-sm"> View Details</a></td>
+                                    </tr>
+                                    <?php $cnt=$cnt+1; } ?>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
                         </div>
                     </div>
                 </div>
