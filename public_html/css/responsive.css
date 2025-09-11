@@ -1,0 +1,161 @@
+
+
+
+/* ===== Background Color ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #D2B48C; /* Light brown */
+    z-index: -1;
+}
+
+/* ===== Adjusted Glass Containers for Light Background ===== */
+.glass-navbar,
+.header_section,
+.container,
+.glass-container {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(101, 67, 33, 0.3); /* Subtle dark brown border */
+    border-radius: 10px;
+}
+
+.header_section {
+    padding: 15px 20px;
+}
+
+/* ===== Navbar Brand & Links (Updated for Readability) ===== */
+.navbar-brand span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #5C4033; /* Dark brown for contrast */
+}
+
+.nav-link {
+    color: #5C4033 !important;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: #000 !important;
+}
+
+/* ===== Hero Section (With Illustration) ===== */
+.slider_section {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+.slider_content {
+    flex: 1;
+}
+
+.illustration-image {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+}
+
+.illustration-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== Main Title & Subtitle ===== */
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #5C4033;
+    margin-bottom: 20px;
+}
+
+.main-subtitle {
+    font-size: 1.2rem;
+    color: #6A5A4D;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* ===== Buttons ===== */
+.main-btn {
+    display: inline-block;
+    background: #8B4513;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+.main-btn:hover {
+    background: #5C4033;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ===== Mobile Dropdown ===== */
+.navbar-toggler {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(101, 67, 33, 0.3);
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbar-toggler span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #5C4033;
+    border-radius: 2px;
+}
+
+.navbar-collapse {
+    background: #F5F5DC;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(101, 67, 33, 0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .slider_section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 20px;
+        height: auto;
+        min-height: 75vh;
+    }
+
+    .slider_content {
+        max-width: 100%;
+    }
+
+    .illustration-image {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title { font-size: 2.2rem; }
+    .main-subtitle { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .main-title { font-size: 1.8rem; }
+    .main-subtitle { font-size: 0.9rem; }
+}
